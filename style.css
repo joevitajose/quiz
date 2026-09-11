@@ -1,0 +1,298 @@
+:root {
+  --orange: #fd4805;
+  --black: #1a1a1a;
+  --grey: #6b6b6b;
+  --line: #e7e7e7;
+  --bg: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--black);
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header img {
+  height: 40px;
+  width: 40px;
+}
+
+.site-header .brand {
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.site-header .brand span {
+  color: var(--orange);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 560px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Start screen */
+.start-logo {
+  display: block;
+  width: 120px;
+  margin: 0 auto 24px;
+}
+
+.start-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.start-sub {
+  text-align: center;
+  color: var(--grey);
+  font-size: 14px;
+  margin: 0 0 32px;
+  line-height: 1.5;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--black);
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--orange);
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 8px;
+  background: var(--orange);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.btn:hover {
+  background: #e34204;
+}
+
+.btn:disabled {
+  background: #f0b79a;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: none;
+  color: var(--black);
+  border: 1px solid var(--line);
+}
+
+.btn-secondary:hover {
+  background: #fafafa;
+}
+
+.error-text {
+  color: var(--orange);
+  font-size: 13px;
+  margin-top: -8px;
+  margin-bottom: 12px;
+  display: none;
+}
+
+/* Quiz screen */
+.progress-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.progress-label {
+  font-size: 13px;
+  color: var(--grey);
+  font-weight: 600;
+}
+
+.progress-track {
+  flex: 1;
+  height: 4px;
+  background: var(--line);
+  border-radius: 2px;
+  margin-left: 16px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--orange);
+  width: 0%;
+  transition: width 0.25s ease;
+}
+
+.question-text {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.55;
+  margin: 0 0 22px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.option:hover {
+  border-color: #f3b291;
+}
+
+.option.selected {
+  border-color: var(--orange);
+  background: #fff5f0;
+}
+
+.option .dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.option.selected .dot {
+  border-color: var(--orange);
+}
+
+.option.selected .dot::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+.nav-row {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-row .btn {
+  margin-top: 0;
+}
+
+/* Done screen */
+.done-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.done-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.done-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.done-sub {
+  text-align: center;
+  color: var(--grey);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 18px;
+  font-size: 12px;
+  color: var(--grey);
+  border-top: 1px solid var(--line);
+}
+
+.site-footer span {
+  color: var(--orange);
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    padding: 14px 18px;
+  }
+  main {
+    padding: 20px 14px;
+  }
+}
